@@ -1,0 +1,38 @@
+services:
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: silge-backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+      - silge-db:/app/data
+      - silge-uploads:/app/uploads
+      - silge-tutanaklar:/app/tutanaklar
+    env_file:
+      - .env
+    environment:
+      - TZ=Europe/Istanbul
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./silge-frontend
+      dockerfile: Dockerfile
+    container_name: silge-frontend
+    ports:
+      - "5173:5173"
+    environment:
+      - VITE_API_URL=http://localhost:8000
+      - TZ=Europe/Istanbul
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  silge-db:
+  silge-uploads:
+  silge-tutanaklar:

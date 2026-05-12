@@ -1,0 +1,26 @@
+# Ortam değişkenleri
+.env
+
+# Veritabanı
+*.db
+data/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+venv/
+.venv/
+
+# İmha tutanakları ve yüklenen dosyalar
+tutanaklar/
+uploads/
+
+# Node
+node_modules/
+dist/
+
+# IDE
+.vscode/
+.idea/
