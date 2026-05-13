@@ -21,7 +21,7 @@ KVKK ve GDPR kapsamında veri saklama sürelerini otomatik takip eden, süresi d
 
 ---
 
-## Teknoloji Yığını
+## Kullanılan Teknolojiler
 
 | Katman | Teknoloji |
 |---|---|
